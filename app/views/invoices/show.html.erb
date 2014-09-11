@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @invoice.amount %>
+</p>
+
+<p>
+  <strong>Service type:</strong>
+  <%= @invoice.service_type %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @invoice.organization %>
+</p>
+
+<p>
+  <strong>Bill dueon:</strong>
+  <%= @invoice.bill_dueon %>
+</p>
+
+<p>
+  <strong>Service details:</strong>
+  <%= @invoice.service_details %>
+</p>
+
+<p>
+  <strong>Service date:</strong>
+  <%= @invoice.service_date %>
+</p>
+
+<p>
+  <strong>Flag:</strong>
+  <%= @invoice.flag %>
+</p>
+
+
+<p>
+  <strong>vendor_email:</strong>
+  <%= @invoice.vendor_email %>
+</p>
+
+<p>
+  <strong>vendor_name:</strong>
+  <%= @invoice.vendor_name %>
+</p>
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

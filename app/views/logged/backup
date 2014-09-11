@@ -1,0 +1,33 @@
+<h1><small> Hello! ,</small>   <%= params[:name] %></h1>
+<% count=1 %>
+<% @bills.each do |bill| %>
+<h4>Invoice Number - <%= count %></h4>
+<% count = count+1 %>
+<table class="table table-striped"/>
+	<tr>
+	<td><p>Amount</p></td>
+	<td><%= bill.amount %></td>
+	</tr>
+	<tr>
+	<td><p>Service Type</p></td>
+	<td><%= bill.service_type %></td>
+	</tr>
+	<tr>
+	<td><p>Organization</p>	</td>
+	<td><%= bill.organization %></td>
+	</tr>
+	<tr>
+	<td><p>Due On</p></td>
+	<td><%= bill.bill_dueon %></td>
+	</tr>
+	<tr>
+	<td><p>Service Details</p></td>
+	<td><%= bill.service_details %></td>
+	</tr>
+	<tr>
+	<td><p>Service Date</p></td>
+	<td><%= bill.service_date %></td>
+	</tr>
+</table>
+	<br />
+<% end %>

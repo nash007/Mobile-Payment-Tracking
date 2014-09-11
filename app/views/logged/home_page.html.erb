@@ -1,0 +1,176 @@
+<h2>Welcome!  <%= @name %></h2>
+<%= link_to new_invoice_path() do %>
+	<button type="button" class="btn btn-primary btn-large">New Invoice</button>
+<% end %>
+<%= link_to edit_user_path(@id) do %>
+	<button type="button" class="btn btn-danger btn-large">Edit Profile</button>
+<% end %>
+
+<br/>
+<br/>
+<br/>
+<% flag123=0 %>
+<br/>
+<br/>
+<br/>
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+      <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+	    	Pending Bills
+            </a>
+      </div>
+      <div id="collapseOne" class="accordion-body collapse">
+      	<div class="accordion-inner">
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 0 %>
+
+<% flag123=1 %>
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+<% end %>
+
+
+<% end %>
+</div>
+</div>
+</div>
+</div>
+
+<div class="accordion" id="accordion3">
+  <div class="accordion-group">
+      <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwo">
+	    	Accepted Bills
+            </a>
+      </div>
+      <div id="collapseTwo" class="accordion-body collapse">
+      	<div class="accordion-inner">
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 1 %>
+
+<% flag123=1 %>
+
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+<% end %>
+
+
+<% end %>
+</div>
+</div>
+</div>
+</div>
+
+<div class="accordion" id="accordion4">
+  <div class="accordion-group">
+      <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseThree">
+	    	Rejected Bills
+            </a>
+      </div>
+      <div id="collapseThree" class="accordion-body collapse">
+      	<div class="accordion-inner">
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 2 %>
+
+<% flag123=1 %>
+
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+<% end %>
+
+
+<% end %>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,188 @@
+<h1><small> Hello </small>   <%= params[:name] %> !</h1>
+<% count=1 %>
+
+
+
+<% flag123=0 %>
+
+<div class="container">
+			<div class="jumbotron">
+				<center>
+					<h1> Pending Bills</h1>
+				</center>
+			</div>
+		</div>
+
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 0 %>
+
+<% flag123=1 %>
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header><br/>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+
+<% end %>
+
+<% if flag123==1 %>
+<%= link_to "Accept Bill" , :controller => "logged" , :action => "changeup" , :id => bill.id %>  
+ <%= link_to "Reject Bill" , :controller => "logged" , :action => "changedown" , :id => bill.id %>
+<% flag123=0 %>
+<br /><br /><br />
+<% end %>
+
+<% end %>
+
+
+<% if flag123==0 %>
+None <br />
+<% end %>
+
+
+<hr />
+
+
+
+<% flag123=0 %>
+<div class="container">
+			<div class="jumbotron">
+				<center>
+					<h1> Accepted Bills</h1>
+				</center>
+			</div>
+		</div>
+
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 1 %>
+
+<% flag123=1 %>
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header><br/>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+
+<% end %>
+
+<% end %>
+
+<% if flag123==0 %>
+None <br />
+<% end %>
+
+
+
+<hr />
+
+
+
+<% flag123=0 %>
+<div class="container">
+			<div class="jumbotron">
+				<center>
+					<h1> Rejected Bills</h1>
+				</center>
+			</div>
+		</div>
+
+
+<% @bills.each do |bill| %>
+
+
+<% if bill.flag == 2 %>
+
+<% flag123=1 %>
+
+<header> Bill From <big><b><%= bill.vendor_name %> </b> </big></header><br/>
+<table class="table table-striped">
+<tr>
+<td>Bill Amount</td>
+<td><%= bill.amount %></td>
+</tr>
+<tr>
+<td>Service Type</td>
+<td><%= bill.service_type %></td>
+</tr>
+<tr>
+<td>Bill Due On</td>
+<td><%= bill.bill_dueon %></td>
+</tr>
+<tr>
+<td>Service Details</td>
+<td><%= bill.service_details %></td>
+</tr>
+<tr>
+<td>Service Date</td>
+<td><%= bill.service_date %></td>
+</tr>
+<tr>
+<td>Organization Name</td>
+<td><%= bill.organization %></td>
+</tr>
+</table>
+
+<% end %>
+
+<% end %>
+
+
+<% if flag123==0 %>
+None <br />
+<% end %>
+
+
+<hr />
+

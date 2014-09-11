@@ -1,0 +1,26 @@
+<div class="container">
+		<div class="jumbotron">
+			<center>
+				<h1> Sign In </h1>
+			</center>
+		</div>
+</div>
+<% provide(:title, 'Sign up') %>
+
+
+<div class="container-fluid">
+<div class="row-fluid">
+<%= form_tag("login_check", method: "post") do %>
+<label for="email">Email</label>
+<%= text_field_tag :email %>
+<label for="password">Password</label>
+<%= password_field_tag :password %><br />
+      <%= submit_tag("Log in") %>
+      <% end %>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href="/users/new" class="btn btn-primary btn-large" style="color:white">SIGN UP</a>

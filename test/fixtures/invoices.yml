@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  amount: MyString
+  service_type: MyString
+  organization: MyString
+  bill_dueon: 2013-10-06
+  service_details: MyText
+  service_date: 2013-10-06
+
+two:
+  amount: MyString
+  service_type: MyString
+  organization: MyString
+  bill_dueon: 2013-10-06
+  service_details: MyText
+  service_date: 2013-10-06
